@@ -1,0 +1,234 @@
+{
+  "nodes": [
+    {
+      "id": "Language model",
+      "group": "Core concepts",
+      "definition": "A program that predicts text, one token at a time, based on patterns learned in training.",
+      "mentions": 10
+    },
+    {
+      "id": "Token",
+      "group": "Core concepts",
+      "definition": "The unit a model works with; text is split into tokens and limits are counted in tokens.",
+      "mentions": 0
+    },
+    {
+      "id": "Context window",
+      "group": "Core concepts",
+      "definition": "The maximum amount of text (in tokens) a model can hold at once: question, documents and answer.",
+      "mentions": 2
+    },
+    {
+      "id": "Inference",
+      "group": "Core concepts",
+      "definition": "Running a trained model to get an answer; happens every time we ask the LLM something.",
+      "mentions": 0
+    },
+    {
+      "id": "Prompt",
+      "group": "Core concepts",
+      "definition": "The input you give the model.",
+      "mentions": 1
+    },
+    {
+      "id": "Hallucination",
+      "group": "Risks",
+      "definition": "When a model states something false with full confidence, e.g. invented functions or libraries.",
+      "mentions": 1
+    },
+    {
+      "id": "Fine-tuning",
+      "group": "Core concepts",
+      "definition": "Training an existing model further on your own data to adapt it to a domain or style.",
+      "mentions": 1
+    },
+    {
+      "id": "Agent",
+      "group": "Agents",
+      "definition": "A model that takes multi-step actions: plans, acts, checks the result and retries.",
+      "mentions": 2
+    },
+    {
+      "id": "RAG",
+      "group": "Retrieval & grounding",
+      "definition": "Retrieval-Augmented Generation: look up relevant documents first, then pass them to the model.",
+      "mentions": 2
+    },
+    {
+      "id": "Retrieval",
+      "group": "Retrieval & grounding",
+      "definition": "Searching and fetching the most relevant information for a question before answering.",
+      "mentions": 6
+    },
+    {
+      "id": "Chunking",
+      "group": "Retrieval & grounding",
+      "definition": "Splitting a long document into smaller passages before storing it.",
+      "mentions": 2
+    },
+    {
+      "id": "Embedding",
+      "group": "Retrieval & grounding",
+      "definition": "Text converted into a list of numbers representing its meaning; similar meanings sit close together.",
+      "mentions": 2
+    },
+    {
+      "id": "Vector database",
+      "group": "Retrieval & grounding",
+      "definition": "Storage that finds the items closest to a given embedding (similarity search, not exact match).",
+      "mentions": 1
+    },
+    {
+      "id": "Grounding",
+      "group": "Retrieval & grounding",
+      "definition": "Making the model answer from supplied sources rather than memory, so answers can be checked.",
+      "mentions": 1
+    },
+    {
+      "id": "Bottleneck",
+      "group": "Retrieval & grounding",
+      "definition": "The narrowest part of a system that limits everything else; in RAG usually retrieval.",
+      "mentions": 1
+    },
+    {
+      "id": "Diffusion model",
+      "group": "Visual generation",
+      "definition": "Image-generation architecture: starts from noise and removes it step by step, guided by the prompt.",
+      "mentions": 1
+    },
+    {
+      "id": "Temporal consistency",
+      "group": "Visual generation",
+      "definition": "In video, each frame must be credible alone and fit neighbouring frames.",
+      "mentions": 2
+    },
+    {
+      "id": "Seed",
+      "group": "Visual generation",
+      "definition": "The random starting value of a generation; same prompt + same seed = same image.",
+      "mentions": 1
+    }
+  ],
+  "links": [
+    {
+      "source": "Prompt",
+      "target": "Language model",
+      "label": "input to",
+      "cooccurrence": 1
+    },
+    {
+      "source": "Token",
+      "target": "Context window",
+      "label": "measures",
+      "cooccurrence": 0
+    },
+    {
+      "source": "Context window",
+      "target": "Language model",
+      "label": "limits",
+      "cooccurrence": 1
+    },
+    {
+      "source": "Inference",
+      "target": "Language model",
+      "label": "runs",
+      "cooccurrence": 0
+    },
+    {
+      "source": "Language model",
+      "target": "Hallucination",
+      "label": "can produce",
+      "cooccurrence": 1
+    },
+    {
+      "source": "Fine-tuning",
+      "target": "Language model",
+      "label": "adapts",
+      "cooccurrence": 0
+    },
+    {
+      "source": "Agent",
+      "target": "Language model",
+      "label": "built on",
+      "cooccurrence": 1
+    },
+    {
+      "source": "Agent",
+      "target": "Inference",
+      "label": "runs many steps of",
+      "cooccurrence": 0
+    },
+    {
+      "source": "RAG",
+      "target": "Retrieval",
+      "label": "starts with",
+      "cooccurrence": 2
+    },
+    {
+      "source": "RAG",
+      "target": "Grounding",
+      "label": "achieves",
+      "cooccurrence": 1
+    },
+    {
+      "source": "RAG",
+      "target": "Context window",
+      "label": "fills with passages",
+      "cooccurrence": 0
+    },
+    {
+      "source": "RAG",
+      "target": "Fine-tuning",
+      "label": "alternative to",
+      "cooccurrence": 0
+    },
+    {
+      "source": "Chunking",
+      "target": "Embedding",
+      "label": "chunks become",
+      "cooccurrence": 1
+    },
+    {
+      "source": "Embedding",
+      "target": "Vector database",
+      "label": "stored in",
+      "cooccurrence": 1
+    },
+    {
+      "source": "Retrieval",
+      "target": "Vector database",
+      "label": "searches",
+      "cooccurrence": 1
+    },
+    {
+      "source": "Retrieval",
+      "target": "Bottleneck",
+      "label": "usually the",
+      "cooccurrence": 1
+    },
+    {
+      "source": "Grounding",
+      "target": "Hallucination",
+      "label": "reduces",
+      "cooccurrence": 0
+    },
+    {
+      "source": "Diffusion model",
+      "target": "Prompt",
+      "label": "guided by",
+      "cooccurrence": 1
+    },
+    {
+      "source": "Diffusion model",
+      "target": "Seed",
+      "label": "starts from",
+      "cooccurrence": 0
+    },
+    {
+      "source": "Diffusion model",
+      "target": "Temporal consistency",
+      "label": "video requires",
+      "cooccurrence": 1
+    }
+  ]
+}
